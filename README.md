@@ -61,6 +61,7 @@ GitHub에 올라간 기록 초기화 후 재적용 (강제 덮어쓰기)
 로컬의 .git 폴더를 삭제하고 새로 시작한 뒤 강제로 푸시하는 방법:
 
 Bash
+
 rm -rf .git          # Git 기록 삭제 (Windows는 rd /s /q .git)
 git init             # 다시 초기화
 git add .
