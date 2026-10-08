@@ -52,20 +52,27 @@ error: remote origin already exists. (원격 저장소 중복 등록 에러)
 원인: 이미 origin이라는 이름의 원격 저장소가 등록되어 있는데 다시 등록하려 할 때 발생
 
 해결:
+
 git remote -v: 현재 연결된 주소 확인
 git remote set-url origin <새-주소>: 주소 변경
 git remote remove origin: 연결 해제 후 다시 등록
-
 GitHub에 올라간 기록 초기화 후 재적용 (강제 덮어쓰기)
 
 로컬의 .git 폴더를 삭제하고 새로 시작한 뒤 강제로 푸시하는 방법:
 
 Bash
 
-rm -rf .git          # Git 기록 삭제 (Windows는 rd /s /q .git)
-git init             # 다시 초기화
+rm -rf .git                    # Git 기록 삭제 (Windows는 rd /s /q .git)
+
+git init                       # 다시 초기화
+
 git add .
-git commit -m "초기 커밋"
-git remote add origin <GitHub-주소>
+
+git commit -m           "초기 커밋"
+
+git remote add origin           <GitHub-주소>
+
 git branch -M main
+
 git push -u origin main --force  # 원격 저장소를 내 코드로 강제 덮어쓰기
+
